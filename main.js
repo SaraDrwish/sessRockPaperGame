@@ -2,8 +2,8 @@
 let showRes = document.querySelector("showRes");
 let compran ;
 function computerPlay( ){
-let randop = ["rock" ,"paper","scissores"];
-// scissores ,scissors
+let randop = ["rock" ,"paper","scissors"];
+// scissors ,scissors .scissors
 let player =  Math.floor(Math.random()*3);
 // let compran = randop[player];
  compran = randop[player];
@@ -27,7 +27,7 @@ let windh5 = document.querySelector("section h5");
 
 //h6 user
 let usercho =document.getElementById("usercho");
-let btn = document.querySelectorAll("section h5 button");
+let btn = document.querySelectorAll("section h5 img");
 let userchois ;
 
 btn.forEach((btn)=>{
@@ -65,6 +65,7 @@ btn.forEach((btn)=>{
      // let playerSelection = ply.toLowerCase();
       if(userchois === compran){     
           res = "this is the same choice LETs do other try" ;
+          same++ ;
        }else if(userchois === "rock" && compran ==="paper"){
           res = "u win" ;
           counter++;
@@ -73,18 +74,18 @@ btn.forEach((btn)=>{
           res = "u lost" ;
           computcountwin++;
        }
-       else if(userchois === "rock" && compran ==="scissores"){
+       else if(userchois === "rock" && compran ==="scissors"){
           res = "u lost" ;
-       } else if(userchois === "scissores" && compran ==="rock"){
+       } else if(userchois === "scissors" && compran ==="rock"){
           res = "u win" ;
           counter++;
      }
-
-      else if(userchois === "paper" && compran ===" scissores"){
+// scissors
+      else if(userchois === "paper" && compran ===" scissors"){
                res = "u lost" ;
                computcountwin++;
 
-      }else if(userchois === "scissores" && compran ==="paper"){
+      }else if(userchois === "scissors" && compran ==="paper"){
                res = "u win" ;
                counter++;
 
@@ -100,40 +101,53 @@ btn.forEach((btn)=>{
 
        }
        
-       else if(userchois === "scissores" && compran === "rock"){
+       else if(userchois === "scissors" && compran === "rock"){
           res = "u win" ;
           counter++;
 
-       }else if(userchois === "rock" && compran === "scissores"){
+       }else if(userchois === "rock" && compran === "scissors"){
           res = "u lost" ;
           computcountwin++;
 
        }
 
-       else if(userchois === "scissores" && compran === "paper"){
+       else if(userchois === "scissors" && compran === "paper"){
           res = "u lost" ;
           computcountwin++;
 
-       }else if(userchois === "paper" && compran === "scissores"){
+       }else if(userchois === "paper" && compran === "scissors"){
           res = "u win" ;
           counter++;
 
        }
        
-       else if(userchois === "scissores" && compran === "paper"){
+       else if(userchois === "scissors" && compran === "paper"){
           res = "u lost" ;
           computcountwin++;
 
-       } else if(userchois === "paper" && compran === "scissores"){
+       } else if(userchois === "paper" && compran === "scissors"){
           res = "u win" ;
           counter++;
 
        }
+       
        console.log( counter );
+
+      //  if(counter === computcountwin){
+      //    let same =+ counter ;
+      //    same++;
+      //   }
+    
+      // function same(){
+      //    if(counter === computcountwin ){
+      //       same++;
+      //    };
+      // }
+     
 
       //  resultss.innerHTML =  res + " :  " + " the number of times that you win is : " + " " + counter ;
       //  showRes.innerHTML = "THE END And  ---- you wins :" + counter + " Tiems || and the computer wins :" + computcountwin  + "Times ---- THNKS ";
-      resultss.innerHTML = " you wins :" + counter + " Tiems,  AND the computer wins :" + computcountwin  + " Times, ---- THNKS ";
+      resultss.innerHTML = " you wins :" + counter + " Tiems,  AND the computer wins :" + computcountwin  + " Times, same chosing :  " + same ;
 
 
 
@@ -146,7 +160,7 @@ btn.forEach((btn)=>{
                //      console.log("==================================");
                //      res = "this is the same choice LETs do other try" ;
                //      }
-               // else if(playerSelection === "rock" && computerSelection==="scissores"){
+               // else if(playerSelection === "rock" && computerSelection==="scissors"){
                //      console.log("computerSelection:" ,computerSelection);   
                //      console.log("ply:" , ply);
                //      console.log("u win" );
@@ -154,7 +168,7 @@ btn.forEach((btn)=>{
                //      console.log("==================================");
                //      res = "u win" ;
                // }
-               // else if(playerSelection === "scissores" && computerSelection===" rock"){
+               // else if(playerSelection === "scissors" && computerSelection===" rock"){
                //      console.log("computerSelection:" ,computerSelection);   
                //      console.log("ply:" , ply);
                //      console.log("u lost" );
@@ -175,7 +189,7 @@ btn.forEach((btn)=>{
                //      console.log("==================================");
                //      res = "u win" ;
                // }
-               // else if(playerSelection ==="scissores" && computerSelection==="paper"){
+               // else if(playerSelection ==="scissors" && computerSelection==="paper"){
                //      console.log("computerSelection:" ,computerSelection);   
                //      console.log("ply:" , ply);
                //      console.log("u win" );
@@ -183,7 +197,7 @@ btn.forEach((btn)=>{
                //      console.log("==================================");
                //      res = "u win" ;
                // }
-               // else if(playerSelection ==="paper" && computerSelection==="scissores"){
+               // else if(playerSelection ==="paper" && computerSelection==="scissors"){
                //      console.log("computerSelection:" ,computerSelection);   
                //      console.log("ply:" , ply);
                //      console.log("u lost" );
@@ -191,7 +205,7 @@ btn.forEach((btn)=>{
                //      console.log("==================================");
                //      res = "u lost" ;
                // }
-               // else if(playerSelection ==="scissores" && computerSelection==="rock"){
+               // else if(playerSelection ==="scissors" && computerSelection==="rock"){
                //      console.log("computerSelection:" ,computerSelection);   
                //      console.log("ply:" , ply);
                //      console.log("u lost" );
@@ -199,7 +213,7 @@ btn.forEach((btn)=>{
                //      console.log("==================================");  
                //      res = "u lost" ;
                // }
-               // else if(playerSelection ==="rock" && computerSelection==="scissores"){
+               // else if(playerSelection ==="rock" && computerSelection==="scissors"){
                //      console.log("computerSelection:" ,computerSelection);   
                //      console.log("ply:" , ply);
                //      console.log("u win" );
@@ -207,7 +221,7 @@ btn.forEach((btn)=>{
                //      console.log("==================================");   
                //      res = "u win" ;
                // }
-               // else if(playerSelection ==="paper" && computerSelection==="scissores"){
+               // else if(playerSelection ==="paper" && computerSelection==="scissors"){
                //      console.log("computerSelection:" ,computerSelection);   
                //      console.log("ply:" , ply);
                //      console.log("u lost" );
@@ -215,7 +229,7 @@ btn.forEach((btn)=>{
                //      console.log("==================================");
                //      res = "u lost" ;
                // }
-               // else if(playerSelection ==="scissores" && computerSelection==="paper"){
+               // else if(playerSelection ==="scissors" && computerSelection==="paper"){
                //      console.log("computerSelection:" ,computerSelection);   
                //      console.log("ply:" , ply);
                //      console.log("u win" );
@@ -246,7 +260,7 @@ btn.forEach((btn)=>{
 
 function game(){
      for(let j = 0 ; j < 5 ; j++){  
-         //  const playerSelection = prompt("enter your choice rock , paper or scissores:");
+         //  const playerSelection = prompt("enter your choice rock , paper or scissors:");
 
          //  const computerSelection = computerPlay();            
 
